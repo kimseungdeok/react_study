@@ -1,11 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { Fragment } from 'react';
+import MyComponent from './MyComponent';
 
-function App() {
-  const name = '리액트';
-
-  return <div className='react'>{name}</div>
+const App = () => {
+  return <MyComponent />;
 };
 
 export default App;
