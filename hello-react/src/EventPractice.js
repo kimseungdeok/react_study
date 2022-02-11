@@ -12,12 +12,18 @@ class EventPractice extends Component {
         });
     }
 
-    handleCheck = () => {
+    handleClick = () => {
         alert(this.state.username + ': ' + this.state.message);
         this.setState({
             username:'',
             message:''
         });
+    }
+
+    handleKeyPress = (e) => {
+        if(e.key === 'Enter') {
+            this.handleClick();
+        }
     }
 
     render() {
@@ -37,8 +43,9 @@ class EventPractice extends Component {
                     placeholder="아무거나 입력해 보세요"
                     value={this.state.message}
                     onChange={this.handleChange}
+                    onKeyPress={this.handleKeyPress}
                 />
-                <button onClick={this.handleCheck}>확인</button>
+                <button onClick={this.handleClick}>확인</button>
             </div>
         );
     }
