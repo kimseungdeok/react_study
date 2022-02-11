@@ -2,6 +2,7 @@ import { Component } from "react";
 
 class EventPractice extends Component {
     state = {
+        username:'',
         message: ''
     }
 
