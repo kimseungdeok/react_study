@@ -12,7 +12,7 @@ class EventPractice extends Component {
     }
 
     handleCheck = () => {
-        alert(this.state.message + ': ' + this.state.message);
+        alert(this.state.username + ': ' + this.state.message);
         this.setState({
             username:'',
             message:''
