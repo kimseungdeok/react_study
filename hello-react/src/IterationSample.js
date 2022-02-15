@@ -12,11 +12,21 @@ const IterationSample = () => {
     
     const onChange = e => setInputText(e.target.value);
 
+    const onClick = () => {
+        const nextNames = names.concat({
+            id : nextId, // nextId 값을 id로 설정하고
+            text: inputText
+        });
+        setNextId(nextId + 1); // nextId 값에 1을 더해준다.
+        setNames(setNames); // names 값을 업데이트한다.
+        setInputText(''); // inputText를 비운다.
+    }
+
     const namesList = names.map(name => <li key={name.id}>{name.text}</li>);
     return (
     <>
         <input value={inputText} onChange={onChange} />
-        <button>추가</button>
+        <button onClick={onClick}>추가</button>
         <ul>{namesList}</ul>;
     </>
     )
